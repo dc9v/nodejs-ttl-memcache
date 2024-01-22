@@ -1,0 +1,32 @@
+{
+  "name": "node-ttl-memcache",
+  "version": "0.0.1",
+  "description": "Nodejs TTL memory cache - experimental",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/try-to-awakening/node-ttl-memcache.git"
+  },
+  "author": "Taegyun <dev@happyhacking.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/try-to-awakening/node-ttl-memcache/issues"
+  },
+  "homepage": "https://github.com/try-to-awakening/node-ttl-memcache#readme",
+  "dependencies": {
+    "reflect-metadata": "^0.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.4",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  }
+}

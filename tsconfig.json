@@ -1,0 +1,42 @@
+{
+  "include": [
+    "src",
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "target": "es6",
+    "strict": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "pretty": true,
+    "paths": {
+      "/*": [
+        "./*"
+      ]
+    },
+    "outDir": "build",
+    "noImplicitAny": true,
+    "newLine": "lf",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "lib": [
+      "dom",
+      "es5",
+      "es6"
+    ],
+    "incremental": true,
+    "importHelpers": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
+    "declaration": false,
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": false
+  }
+}

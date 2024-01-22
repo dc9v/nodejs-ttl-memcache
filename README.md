@@ -12,10 +12,10 @@ TTL(time to live) 메모리 캐시를 사용하도록 구현했습니다.
 
 ```
 npm:
-   npm i node-ttl-memcache
+   npm i nodejs-ttl-memcache
 
 yarn:
-   yarn add node-ttl-memcache
+   yarn add nodejs-ttl-memcache
 ```
 
 ## 3. GET START
@@ -23,7 +23,7 @@ yarn:
 간단하게 사용하는 방법입니다.
 
 ```ts
-import TTLMemCache from "node-ttl-memcache";
+import TTLMemCache from "nodejs-ttl-memcache";
 
 TTLMemCache.set<string>("KEY_NAME", "TTL memCache");
 TTLMemCache.get<string>("KEY_NAME");
@@ -38,7 +38,7 @@ TTLMemCache.get<string>("KEY_NAME");
     TTL을 3000 밀리초로 설정 후 초당 로그를 보여줍니다.
 
     ```ts
-    import TTLMemCache from "node-ttl-memcache";
+    import TTLMemCache from "nodejs-ttl-memcache";
 
     const KEY_NAME = "KEY_NAME";
     const value = { 
@@ -75,7 +75,7 @@ TTLMemCache.get<string>("KEY_NAME");
   설정된 TTL 시간 이전 강제로 캐시를 만료하는 예를 보여줍니다.
 
     ```ts
-    import TTLMemCache from "node-ttl-memcache";
+    import TTLMemCache from "nodejs-ttl-memcache";
 
     const KEY_NAME = "KEY_NAME";
 

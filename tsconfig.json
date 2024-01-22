@@ -1,7 +1,7 @@
 {
   "include": [
-    "src",
-    "src/**/*.ts"
+    "./*.ts",
+    "./**/*.ts"
   ],
   "exclude": [
     "node_modules"
@@ -9,7 +9,7 @@
   "compilerOptions": {
     "target": "es6",
     "strict": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "resolveJsonModule": true,
     "pretty": true,
     "paths": {
@@ -17,13 +17,12 @@
         "./*"
       ]
     },
-    "outDir": "build",
+    "outDir": ".",
     "noImplicitAny": true,
     "newLine": "lf",
     "moduleResolution": "node",
     "module": "commonjs",
     "lib": [
-      "dom",
       "es5",
       "es6"
     ],

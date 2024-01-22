@@ -3,19 +3,20 @@ namespace TTLMemCache
   type callback = (key: any) => void | any;
   const Data: Map<string, TTL<any> | null | Readonly<any>> = new Map<string, TTL<any> | null | Readonly<any>>();
 
-  export const Options: Record<string, any> = {
+  export const Options =
+  {
     ttl: 1000, // 1000 milliseconds = 1 seconds
     debug: false
   };
 
-  export type CacheParams<T extends any | null> = {
+  export type CacheParams<T = any> = {
     key: string | number | undefined | null;
     value: T;
     ttl?: number;
     onExpired?: callback;
   };
 
-  interface TTL<T extends any | null> extends CacheParams<T | null>
+  interface TTL<T = any | null> extends CacheParams<T | null>
   {
     key: string;
     handler?: TTLCacheHandler;
@@ -54,12 +55,11 @@ namespace TTLMemCache
   };
 
 
-  export function set<T extends any>(key: string | number, value: CacheParams<T>, ttl?: number): void
-  export function set<T extends any>(key: string | number, value: any, ttl?: number): void
-  export function set<T extends any>(record: CacheParams<T>, ttl?: number): void
-  export function set<T extends any>(arg1: string | number | CacheParams<T>, arg2?: CacheParams<T> | any, timetolive?: number): void
+  export function set<T = any>(key: string | number, value: CacheParams<T> | any, ttl?: number): void
+  export function set<T = any>(record: CacheParams<T>, ttl?: number): void
+  export function set<T = any>(arg1: string | number | CacheParams<T>, arg2?: CacheParams<T> | any, timetolive?: number): void
   {
-    const put = <T extends any>(k: string, v: T) =>
+    const put = <T = any>(k: string, v: T) =>
     {
       if (Data.has(k))
       {
@@ -103,7 +103,7 @@ namespace TTLMemCache
     return false;
   }
 
-  export function get<T extends any | null>(key: string | number, defaultValue: T | null = null): T | null
+  export function get<T = any>(key: string | number, defaultValue: T | null = null): T | null
   {
     key = String(key);
 
@@ -140,12 +140,10 @@ namespace TTLMemCache
 
   export function clear(): void
   {
-    for (const [key, value] of Data.entries())
+    for (const key in Data.keys())
     {
       Data.get(key)?.handler?.terminate();
       Data.delete(key);
     }
   }
 }
-
-export default TTLMemCache;
